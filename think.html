@@ -1,0 +1,18 @@
+<head>
+  <title>think</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <h3>Everything:</h3>
+  <ul>
+    {{#each items}}
+      <li>{{name}}</li>
+    {{/each}}
+  </ul>
+</template>
