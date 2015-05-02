@@ -3,16 +3,34 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>Rethought Cities</h1>
 
   {{> hello}}
 </body>
 
 <template name="hello">
-  <h3>Everything:</h3>
+  <h3>All:</h3>
   <ul>
-    {{#each items}}
-      <li>{{name}}</li>
+    {{#each cities}}
+      {{> city}}
     {{/each}}
   </ul>
+
+  <h3>By population:</h3>
+  <ul>
+    {{#each sortedCities}}
+      {{> city}}
+    {{/each}}
+  </ul>
+
+  <h3>In China:</h3>
+  <ul>
+    {{#each citiesIn 'China'}}
+      {{> city}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="city">
+  <li>{{population}} — {{name}}, {{country}}</li>
 </template>
